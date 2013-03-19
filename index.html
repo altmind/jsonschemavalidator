@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON Schema validator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span10 input">
+                <h2>JSON</h2>
+                <div class="input-json">
+                    <textarea>
+{
+    "bookingKey": "a188e685781fb4f70865b53b20e895ff",
+      "room":false,
+    "dateFormat": "yyyy-MM-dd"
+}
+                    </textarea>
+                </div>
+                <div class="output-errors">
+                    <h2>Errors</h2>
+                    <div class="errors-placeholder">
+                    </div>
+                </div>
+                <h2>Schema</h2>
+                <div class="input-schema">
+                    <textarea>
+{
+    "type":"object",
+    "$schema":"http://json-schema.org/draft-04/schema", 
+    "id": "#",
+    "required":true,
+    "properties":{
+        "bookingKey": {
+            "type":"string",
+            "id": "bookingKey",
+            "required":false
+        },
+        "dateFormat": {
+            "type":"string",
+            "id": "dateFormat",
+            "required":false
+        },
+        "offer": {
+            "type":"string",
+            "id": "offer",
+            "required":false
+        },
+        "room": {
+            "type":"number",
+            "id": "room",
+            "required":true
+        },
+        "searchKey": {
+            "type":"string",
+            "id": "searchKey",
+            "required":false
+        },
+        "uniqueId": {
+            "type":"string",
+            "id": "uniqueId",
+            "required":false
+        }
+    }
+}
+                    </textarea>
+                </div>
+            </div>
+            <div class="span2 options">
+                <strong>Validator</strong>
+                <label class="radio">
+                    <input type="radio" name="validator" value="tv4" checked>
+                    TV4(draft4)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="validator" value="jsv-03">
+                    JSV(draft3)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="validator" value="jsv-02">
+                    JSV(draft2)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="validator" value="jsv-01">
+                    JSV(draft1)
+                </label>
+                <label class="radio">
+                    <input type="radio" name="validator" value="json-schema-validator">
+                    JSON-Schema-Validator
+                </label>
+                <button type="submit" class="btn">Validate</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/tv4/tv4.js"></script>
+    <script type="text/javascript" src="js/jsv/uri/uri.js"></script>
+    <script type="text/javascript" src="js/jsv/uri/schemes/urn.js"></script>
+    <script type="text/javascript" src="js/jsv/jsv.js"></script>
+    <script type="text/javascript" src="js/jsv/json-schema-draft-03.js"></script>
+    <script type="text/javascript" src="js/jsv/json-schema-draft-02.js"></script>
+    <script type="text/javascript" src="js/jsv/json-schema-draft-01.js"></script>
+    <script type="text/javascript" src="js/json-schema/validate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+body{
+	padding: 10px;
+}
+.options, .input, .output-errors{
+	padding: 8px;
+	border-radius: 7px;
+	margin-top: 5px;
+}
+.input{
+	background-color: #CFEF9F;
+	padding: 15px;
+}
+.options {
+	background-color: #EEF;
+}
+.output-errors{
+	background-color: #FEE;	
+	border: 1px solid #CCC;
+	display:none;
+}
+.input textarea{
+	width:100%;
+	max-width: 100%;
+	min-height: 300px;
+	padding:0;
+	margin:0;
+}
